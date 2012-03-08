@@ -5,8 +5,16 @@ gem 'rails', '3.2.2'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+gem "mongoid", "~> 2.4"
+gem "bson_ext", "~> 1.5"
 
+gem 'devise'
+gem 'cancan'
+gem 'omniauth'
+gem 'simple_form'
+gem 'inherited_resources'
+gem 'will_paginate', '~> 3.0'
+gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -21,6 +29,8 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'haml'
+gem 'haml-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

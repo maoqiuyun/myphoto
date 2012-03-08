@@ -1,0 +1,19 @@
+development:
+  host: localhost
+  database: myphoto_development
+
+
+# defaults: &defaults
+#   host: localhost
+# 
+# development:
+#   <<: * &defaults
+#   database: myphoto_development
+# 
+# test:
+#   <<: * &defaults
+#   database: myphoto_test
+# 
+# production:
+#   <<: * &defaults
+#   database: myphoto_production
