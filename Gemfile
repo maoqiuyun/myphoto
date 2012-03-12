@@ -15,6 +15,7 @@ gem 'simple_form'
 gem 'inherited_resources'
 gem 'will_paginate', '~> 3.0'
 gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
+gem 'twitter-bootstrap-rails', :git => 'http://github.com/seyhunak/twitter-bootstrap-rails.git'
 
 # Gems used only for assets and not required
 # in production environments by default.

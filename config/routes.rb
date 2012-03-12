@@ -1,4 +1,8 @@
 Myphoto::Application.routes.draw do
+  get "photos/index"
+
+  get "albums/index"
+
   get "home/index"
 
   devise_for :users

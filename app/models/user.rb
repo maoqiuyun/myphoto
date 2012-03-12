@@ -11,7 +11,6 @@ class User
   ## Database authenticatable
   field :email,              :type => String, :null => false, :default => ""
   field :encrypted_password, :type => String, :null => false, :default => ""
-
   ## Recoverable
   field :reset_password_token,   :type => String
   field :reset_password_sent_at, :type => Time
@@ -26,6 +25,7 @@ class User
   field :current_sign_in_ip, :type => String
   field :last_sign_in_ip,    :type => String
   
+  field :username, :type => String, :null => false
   field :avatar, :type => String
   ## Encryptable
   # field :password_salt, :type => String
@@ -43,4 +43,7 @@ class User
 
   ## Token authenticatable
   # field :authentication_token, :type => String
+  
+  has_many :albums
+  has_many :photos
 end

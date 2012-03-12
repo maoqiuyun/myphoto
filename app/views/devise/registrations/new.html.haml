@@ -1,2 +1,8 @@
 = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+  = f.error_notification
+  = f.input :email
+  = f.input :password, autofocus: true
+  = f.input :password_confirmation
+  = f.file_field :avatar
+  
   = f.submit

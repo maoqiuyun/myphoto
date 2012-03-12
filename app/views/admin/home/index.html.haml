@@ -2,3 +2,11 @@
 %p Find me in app/views/admin/home/index.html.haml
 - @users.each do |user|
   = user.email
+  
+= @current_user.id
+= image_tag @current_user.avatar
+
+= link_to "login out", destroy_user_session_path, method: :delete
+
+
+
