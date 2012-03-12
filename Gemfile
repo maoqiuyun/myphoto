@@ -14,7 +14,10 @@ gem 'omniauth'
 gem 'simple_form'
 gem 'inherited_resources'
 gem 'will_paginate', '~> 3.0'
+
 gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
+gem 'mini_magick'
+
 gem 'twitter-bootstrap-rails', :git => 'http://github.com/seyhunak/twitter-bootstrap-rails.git'
 
 # Gems used only for assets and not required

@@ -1,11 +1,13 @@
 Myphoto::Application.routes.draw do
-  get "photos/index"
+  # get "users/index"
 
-  get "albums/index"
 
   get "home/index"
 
   devise_for :users
+  resources :users
+  resources :albums
+  resources :photos
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
