@@ -1,7 +1,8 @@
 = @photo.id
+%div= image_tag @photo.image
+%div= image_tag @photo.image.url(:thumb)
 - @photo.tags.each do |tag|
   = tag.name
- 
 - tags = Tag.all  
 - tags.each do |ta|
   %div= ta.name
