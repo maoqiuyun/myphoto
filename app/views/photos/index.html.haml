@@ -1,5 +1,8 @@
 %h1 Photos#index
 %p Find me in app/views/photos/index.html.haml
 - @photos.each do |photo|
-  = image_tag photo.image
+  / = image_tag photo.image
   = photo.id
+  - photo.tags.each do |tag|
+    = tag.name
+    %br

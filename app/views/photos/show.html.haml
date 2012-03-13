@@ -1,0 +1,12 @@
+= @photo.id
+- @photo.tags.each do |tag|
+  = tag.name
+ 
+- tags = Tag.all  
+- tags.each do |ta|
+  %div= ta.name
+
+= link_to "new", new_photo_path
+
+- Tag.where(name: "3434").first.photos.each do |t|
+  %div= t.name
