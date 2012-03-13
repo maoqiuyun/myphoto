@@ -1,8 +1,15 @@
 class AlbumsController < ApplicationController
   inherit_resources
   
-  def new
-    # @album = current_user.albums.new
+  before_filter :authenticate_user!
+  
+  def index
+    @albums = current_user.albums
+  end
+  
+  def show
+    @album = Album.find(params[:id])
+    @photos = @album.photos
   end
   
   def create

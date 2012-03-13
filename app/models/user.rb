@@ -1,13 +1,16 @@
 class User
   include Mongoid::Document
   
+  validates :email, :presence => true, :uniqueness => true
+  validates :username, :presence => true, :uniqueness => true
+  
   mount_uploader :avatar, AvatarUploader
   
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-
+  
   ## Database authenticatable
   field :email,              :type => String, :null => false, :default => ""
   field :encrypted_password, :type => String, :null => false, :default => ""

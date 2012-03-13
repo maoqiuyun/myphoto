@@ -1,0 +1,13 @@
+.navbar-inner
+  .container
+    .brand= "MyPhoto"
+    %ul.nav
+      %li.active= link_to "home", root_path
+      %li= link_to "个人资料"
+      %li= link_to "相册", albums_path
+      %li= link_to "照片", photos_path
+    %ul.nav.pull-right
+      - if user_signed_in?
+        %li= link_to '注销', destroy_user_session_path, :method => :delete
+      - else
+        %li= link_to '登陆', new_user_session_path

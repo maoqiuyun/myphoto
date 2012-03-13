@@ -11,18 +11,8 @@
   
     = yield :head
   %body
-    .navbar.navbar-fixed-top
-      .navbar-inner
-        .container
-          .brand= "MyPhoto"
-          %ul.nav
-            %li.active= link_to "home", root_path
-            %li= link_to "link"
-          %ul.nav.pull-right
-            - if user_signed_in?
-              %li= link_to '注销', destroy_user_session_path, :method => :delete
-            - else
-              %li= link_to '登陆', new_user_session_path
+    #header.navbar.navbar-fixed-top
+      = render "shared/header"
     .container{:style => "height: 2000px;"}
       = yield 
 

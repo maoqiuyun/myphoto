@@ -3,5 +3,5 @@
   = f.input :name
   = f.input :tagslist
   = f.file_field :image
-  
+  = f.input :album_id, input_html: {value: @album_id }, as: "hidden"
   = f.submit
