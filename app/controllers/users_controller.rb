@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  inherit_resources
   
-  def albums
-  end
+  inherit_resources
+  before_filter :authenticate_user!
+  
 end

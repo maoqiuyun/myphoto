@@ -1,3 +1,4 @@
 = simple_form_for current_user.albums.build do |f|
   = f.input :name
+  = f.input :description, as: :text 
   = f.submit

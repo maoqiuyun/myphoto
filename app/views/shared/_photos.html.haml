@@ -1,4 +1,7 @@
-- @photos.each do |photo|
-  %div
-    %div= image_tag photo.image rescue nil
-    %div= photo.name rescue nil
+%ul.thumbnails
+  - @photos.each do |photo|
+    %li.span2
+      %a.thumbnail{href: photo_path(photo)}
+        = image_tag photo.image.url(:thumb) rescue nil
+      .caption
+        %h5= photo.name

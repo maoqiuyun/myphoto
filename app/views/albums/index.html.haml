@@ -1,2 +1,8 @@
-- @albums.each do |album|
-  %div=link_to album.name, album_path(album)
+%ul.thumbnails
+  - @albums.each do |album|
+    %li.span2
+      %a.thumbnail{href: album_path(album)}
+        = image_tag album.photos.first.image.url(:thumb) rescue nil
+      .caption
+        %h5= album.name
+        %p= album.description

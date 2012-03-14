@@ -2,7 +2,7 @@ class User
   include Mongoid::Document
   
   validates :email, :presence => true, :uniqueness => true
-  validates :username, :presence => true, :uniqueness => true
+  validates :name, :presence => true, :uniqueness => true
   
   mount_uploader :avatar, AvatarUploader
   
@@ -28,8 +28,9 @@ class User
   field :current_sign_in_ip, :type => String
   field :last_sign_in_ip,    :type => String
   
-  field :username, :type => String, :null => false
+  field :name, :type => String, :null => false
   field :avatar, :type => String
+  field :say, :type => String
   ## Encryptable
   # field :password_salt, :type => String
 
