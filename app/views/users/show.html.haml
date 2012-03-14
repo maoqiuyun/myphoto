@@ -1,5 +1,12 @@
-%div= @user.name
-%div= @user.email
-%div= @user.say
-%div= image_tag @user.avatar.url
-= link_to "Edit", edit_user_registration_path
+.row
+  .span4
+    = image_tag @user.avatar.url
+  .span8
+    %dl.dl-horizontal
+      %dt email:
+      %dd= @user.email
+      %dt name
+      %dd= @user.name
+      %dt say
+      %dd= @user.say
+    = link_to "Edit", edit_user_registration_path

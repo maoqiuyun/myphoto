@@ -3,11 +3,12 @@
 
 body
   font-family: $HandleeRegular
+  background: url('bg.jpg')
   p 
     font-family: $HandleeRegular
   .simple_form
     > div 
-      @include clearfix
+      @include clearfix()
       margin-bottom: 18px
     label
       float: left
@@ -18,3 +19,10 @@ body
     .error
       margin-left:  5px
       color: red
+    .actions
+      margin: 20px 0 0 160px
+  ul.thumbnails 
+    h5
+      margin: 5px 0
+    a.thumbnail
+      background-color:  #fff

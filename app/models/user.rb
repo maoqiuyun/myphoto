@@ -1,5 +1,6 @@
 class User
   include Mongoid::Document
+  include Mongoid::Timestamps
   
   validates :email, :presence => true, :uniqueness => true
   validates :name, :presence => true, :uniqueness => true

@@ -9,6 +9,9 @@ class Photo
   field :image, :type => String
   mount_uploader :image, ImageUploader
   
+  validates_presence_of :name, :message => "can't be blank"
+  validates_presence_of :image, :message => "can't be blank"
+  
   def tagslist
      string = ""
      tags.each{|t| string << t.name+", " }

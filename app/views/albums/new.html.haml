@@ -1,4 +1,5 @@
+%h2 Create album
 = simple_form_for current_user.albums.build do |f|
   = f.input :name
-  = f.input :description, as: :text 
-  = f.submit
+  = f.input :description, as: :text, input_html: {rows: 5 }
+  .actions= f.submit

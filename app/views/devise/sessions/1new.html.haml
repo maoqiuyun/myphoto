@@ -1,0 +1,6 @@
+= simple_form_for resource, as: resource_name, url: session_path(resource_name), validate: true, html: {class: "form-horizontal"} do |f|
+  = f.error_notification
+  = f.input :email, required: true
+  = f.input :password, required: true
+  = f.input :remember_me, input_html: {value: 1}, as: :boolean
+  .actions= f.submit

@@ -5,7 +5,7 @@ Myphoto::Application.routes.draw do
   get "home/index"
 
   devise_for :users
-  resources :users, only: [:show]
+  resources :users
   resources :albums
   resources :photos
   
