@@ -35,7 +35,9 @@ class User
   field :name, :type => String, :null => false
   field :avatar, :type => String
   field :say, :type => String
-  field :role, :style => Boolean, :default => false
+  # field :role, :style => Boolean, :default => false
+  field :role, :style => String, :default => "admin"
+  
   
   
   ## Encryptable
