@@ -9,10 +9,10 @@ class Ability
       can :access, :rails_admin
       can :manage, :all
     elsif user.role == 0
-      can :manage, Album
-      can :manage, Photo
+      can :manage, Album, :user_id => user.id
+      can :manage, Photo, :user_id => user.id
       can :manage, Tag
-      can :manage, User
+      can :manage, User, :id => user.id
     end
     
     

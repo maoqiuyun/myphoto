@@ -1,4 +1,4 @@
-# RailsAdmin config file. Generated on March 15, 2012 15:17
+# RailsAdmin config file. Generated on March 16, 2012 00:39
 # See github.com/sferik/rails_admin for more informations
 
 RailsAdmin.config do |config|
@@ -6,8 +6,7 @@ RailsAdmin.config do |config|
   # If your default_local is different from :en, uncomment the following 2 lines and set your default locale here:
   # require 'i18n'
   # I18n.default_locale = :de
-  config.authorize_with :cancan, Ability
-  
+
   config.current_user_method { current_user } # auto-generated
 
   # If you want to track changes on your models:
@@ -86,6 +85,8 @@ RailsAdmin.config do |config|
   #     configure :photos, :has_many_association   #   # Found columns:
   #     configure :_type, :mongoid_type         # Hidden 
   #     configure :_id, :bson_object_id         # Hidden 
+  #     configure :created_at, :datetime 
+  #     configure :updated_at, :datetime 
   #     configure :name, :string 
   #     configure :description, :text 
   #     configure :user_id, :bson_object_id         # Hidden   #   # Sections:
@@ -103,6 +104,8 @@ RailsAdmin.config do |config|
   #     configure :tags, :has_and_belongs_to_many_association   #   # Found columns:
   #     configure :_type, :mongoid_type         # Hidden 
   #     configure :_id, :bson_object_id         # Hidden 
+  #     configure :created_at, :datetime 
+  #     configure :updated_at, :datetime 
   #     configure :user_id, :bson_object_id         # Hidden 
   #     configure :album_id, :bson_object_id         # Hidden 
   #     configure :tag_ids, :serialized         # Hidden 
@@ -129,7 +132,7 @@ RailsAdmin.config do |config|
   #   create do; end
   #   update do; end
   # end
-  # config.model User do
+  config.model User do
   #   # Found associations:
   #     configure :albums, :has_many_association 
   #     configure :photos, :has_many_association   #   # Found columns:
@@ -137,7 +140,6 @@ RailsAdmin.config do |config|
   #     configure :_id, :bson_object_id         # Hidden 
   #     configure :created_at, :datetime 
   #     configure :updated_at, :datetime 
-  #     configure :avatar, :carrierwave 
   #     configure :email, :text 
   #     configure :password, :password         # Hidden 
   #     configure :password_confirmation, :password         # Hidden 
@@ -150,12 +152,37 @@ RailsAdmin.config do |config|
   #     configure :current_sign_in_ip, :text 
   #     configure :last_sign_in_ip, :text 
   #     configure :name, :string 
-  #     configure :say, :text   #   # Sections:
-  #   list do; end
-  #   export do; end
-  #   show do; end
-  #   edit do; end
-  #   create do; end
-  #   update do; end
-  # end
+  #     configure :say, :text 
+    configure :role, :integer 
+    list do
+      config.default_items_per_page = 100
+      field :email do
+        formatted_value do
+          bindings[:view].tag(:img, { src: "http://www.gravatar.com/avatar/#{Digest::MD5.hexdigest value.to_s}?s=20" }) << value
+        end
+      end
+      field :name
+      field :created_at do
+        strftime_format "%Y-%m-%d"
+      end
+      field :last_sign_in_at do
+        strftime_format "%Y-%m-%d"
+      end
+      field :sign_in_count
+      field :role do
+        label "admin"
+        formatted_value do
+          value == 1 ? "true" : "false"
+        end
+      end
+    end
+    show do
+      include_all_fields
+    end
+    # export do; end
+    # show do; end
+    # edit do; end
+    # create do; end
+    # update do; end
+  end
 end

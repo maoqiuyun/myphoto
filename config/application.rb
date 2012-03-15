@@ -73,7 +73,7 @@ module Myphoto
       :domain => "ekohe.com",
       :authentication => :plain,
       :user_name=> "maoqiuyun@ekohe.com",
-      :password => "175351273"
+      :password => ""
     }
     
   end
