@@ -11,6 +11,8 @@ gem "bson_ext", "~> 1.5"
 gem 'devise'
 gem 'cancan'
 gem 'omniauth'
+gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
+
 gem 'simple_form'
 gem 'inherited_resources'
 gem 'will_paginate', '~> 3.0'

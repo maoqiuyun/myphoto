@@ -63,9 +63,18 @@ module Myphoto
     config.assets.version = '1.0'
     
     # MongoDB's GridFS - carrierwave
-    config.grid_fs_database = 'myphoto_development'
-    config.grid_fs_host = 'localhost'
-    config.grid_fs_access_url = "/image/show"
+    # config.grid_fs_database = 'myphoto_development'
+    #   config.grid_fs_host = 'localhost'
+    #   config.grid_fs_access_url = "/image/show"
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.smtp_settings  = {
+      :address => "smtp.gmail.com",
+      :port => 587,
+      :domain => "ekohe.com",
+      :authentication => :plain,
+      :user_name=> "maoqiuyun@ekohe.com",
+      :password => "175351273"
+    }
     
   end
 end

@@ -5,6 +5,9 @@ class User
   validates :email, :presence => true, :uniqueness => true
   validates :name, :presence => true, :uniqueness => true
   
+  has_many :albums
+  has_many :photos
+  
   mount_uploader :avatar, AvatarUploader
   
   # Include default devise modules. Others available are:
@@ -32,6 +35,9 @@ class User
   field :name, :type => String, :null => false
   field :avatar, :type => String
   field :say, :type => String
+  field :role, :style => Boolean, :default => false
+  
+  
   ## Encryptable
   # field :password_salt, :type => String
 
@@ -49,6 +55,4 @@ class User
   ## Token authenticatable
   # field :authentication_token, :type => String
   
-  has_many :albums
-  has_many :photos
 end
