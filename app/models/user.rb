@@ -7,9 +7,7 @@ class User
   
   has_many :albums
   has_many :photos
-  
-  mount_uploader :avatar, AvatarUploader
-  
+    
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -33,12 +31,13 @@ class User
   field :last_sign_in_ip,    :type => String
   
   field :name, :type => String, :null => false
-  field :avatar, :type => String
   field :say, :type => String
   # field :role, :style => Boolean, :default => false
-  field :role, :style => String, :default => "admin"
+  field :role, :style => Integer, :default => 0
   
-  
+  def admin?
+    self.role == 1
+  end
   
   ## Encryptable
   # field :password_salt, :type => String

@@ -2,12 +2,13 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
+    
+    user ||= User.new 
       
-    if user.role  == "admin"
+    if user.role  == 1
       can :access, :rails_admin
       can :manage, :all
-    elsif user.role == "aa"
-      # can :manage, :all 
+    elsif user.role == 0
       can :manage, Album
       can :manage, Photo
       can :manage, Tag

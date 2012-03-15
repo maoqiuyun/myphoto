@@ -6,10 +6,16 @@
       %li= (link_to "#{current_user.name}", user_path(current_user) ) if user_signed_in?
       %li= link_to "album", albums_path
       %li= link_to "photo", photos_path
-    
+      - if user_signed_in? && current_user.admin?
+        %li= link_to "admin", rails_admin_path
+    - if user_signed_in?
+      %ul.nav.pull-right
+        %li= image_tag user_avatar_url(30), :style => "padding-top:5px;"
+      
     %p.navbar-text.pull-right
       - if user_signed_in?
         = "Not #{current_user.name},"
         = link_to 'Sign out?', destroy_user_session_path, :method => :delete
       - else
         = link_to 'Sign in', new_user_session_path
+        
