@@ -1,4 +1,4 @@
-= link_to "Create a album", new_album_path
+%h2 Your albums
 %ul.thumbnails
   - @albums.each do |album|
     %li.span2
@@ -7,3 +7,5 @@
       .caption
         %h5= album.name
         %p= album.description
+= link_to "Create a album", new_album_path
+

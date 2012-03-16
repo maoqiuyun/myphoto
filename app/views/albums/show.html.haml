@@ -1,2 +1,3 @@
-= link_to "Create", new_photo_path(album_id: @album.id)
+%h2= "album: #{@album.name}"
 = render "shared/photos"
+= link_to "Create", new_photo_path(album_id: @album.id)

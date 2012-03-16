@@ -5,3 +5,4 @@
         = image_tag photo.image.url(:thumb) rescue nil
       .caption
         %h5= photo.name
+        %p= "album: #{photo.album.name}"

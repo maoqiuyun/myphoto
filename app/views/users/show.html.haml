@@ -1,15 +1,19 @@
-.row
+.row.user_show
   .span4
     / = image_tag @user.avatar.url
     = image_tag user_avatar_url(200)
   .span8
-    %dl.dl-horizontal
-      %dt email:
-      %dd= @user.email
-      %dt name
-      %dd= @user.name
-      %dt say
-      %dd= @user.say
-    = link_to "Edit", edit_user_registration_path
+    %ul.unstyled
+      %li
+        %span Email:
+        = @user.email
+      %li
+        %span Name:
+        = @user.name
+      %li 
+        %span Say:
+        = @user.say
+      %li
+        = link_to "Edit", edit_user_registration_path
     
     
