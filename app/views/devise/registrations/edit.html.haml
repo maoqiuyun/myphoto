@@ -4,10 +4,8 @@
   = f.error_notification
   = f.input :email, required: true, autofocus: true , input_html: {disabled: true}
   = f.input :name, required: true 
+  = f.input :say
   = f.input :current_password, :hint => "we need your current password to confirm your changes", :required => true 
-  .optional
-    %label avatar
-    = f.file_field :avatar
   .actions= f.button :submit, "Update"
 %h3 Cancel my account
 

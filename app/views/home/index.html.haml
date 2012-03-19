@@ -1,2 +1,14 @@
-%h1 Home#index
-%p Find me in app/views/home/index.html.haml
+.image_carousel
+  .photo_scoll
+    - (@photos*10).each do |photo|
+      = image_tag photo.image.url(:thumb)
+:javascript
+  $(document).ready(function(){
+    $(".photo_scoll").carouFredSel({
+      auto: {
+        play: true,
+        pauseDuration : 3000
+      }
+    });
+  })
+  

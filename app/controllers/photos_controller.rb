@@ -11,7 +11,6 @@ class PhotosController < ApplicationController
   
   def new
     @album_id = params[:album_id]
-    p @album_id
     new!
   end
   

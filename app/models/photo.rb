@@ -11,9 +11,7 @@ class Photo
   mount_uploader :image, ImageUploader
   
   validates_presence_of :name, :message => "can't be blank"
-  validates_presence_of :image, :message => "can't be blank"
   
-  # attr_accessible :image, :image_cache, :remove_image
   
   def tagslist
      string = ""
